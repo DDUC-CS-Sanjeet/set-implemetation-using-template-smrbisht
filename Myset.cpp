@@ -1,5 +1,4 @@
 #include<iostream>
-#include<cmath>
 using namespace std;
 template <typename T>
  void remove_duplicate(T *array,int &row)
@@ -44,7 +43,7 @@ class Myset
     {
     	int i=0,j=0;
     	Myset temp(s.row+row);
-    
+    //	temp.row=s.row+row;
     	for(;i<row;i++)
     	temp.array[i]=array[i];
     	for(;j<s.row;j++,i++)                                                                                                                                                                                                                                                                                                                  
@@ -78,6 +77,7 @@ class Myset
     {
     	int i=0,j=0,k=0;
     	Myset temp;
+    	//temp.row=row;
     	for(int i=0; i<row; i++)
     {
         for(int j=0; j<s.row; j++)
@@ -112,6 +112,7 @@ class Myset
 	{
 		int l=0,k=0;
     	Myset temp;
+    	//temp.row=row;
     	for(int i=0; i<row; i++)
     {
         for(int j=0; j<s.row; j++)
@@ -146,10 +147,11 @@ class Myset
                     return false;
             }
         }
-       void cardinality()
+        void cardinality()
        {
     cout<<row;
 	   }
+       
      void input ()
      {
      	for(int i=0;i<row;i++)
@@ -175,7 +177,7 @@ class Myset
   
 };
 template <typename T>
-void printSets(Myset <T> set1, Myset <T> set2,Myset <T> set7, Myset <T> set3, Myset <T> set4, Myset <T> set5, Myset <T> set6,bool result)
+void printSets(Myset <T> set1, Myset <T> set2, Myset <T> set3, Myset <T> set4, Myset <T> set5, Myset <T> set6,Myset<T> set7,bool result)
 
 {
     cout << "SET A: ";
@@ -190,9 +192,9 @@ void printSets(Myset <T> set1, Myset <T> set2,Myset <T> set7, Myset <T> set3, My
     set5.display();
     cout << "\nSYMMETRIC DIFFERENCE: ";
     set6.display();
-    cout<<"\nCOPY CONSTRUCTOR:";
+    cout<<"\nCOPYCONSTRUCTOR";
     set7.display();
-   if(result==true)
+  if(result==true)
    cout<<"\nSETS A AND B ARE EQUAL";
    else
    cout<<"\nSETS A AND B ARE NOT EQUAL";
@@ -206,6 +208,8 @@ int main()
 	int num1,num2;
 	cout<<" ENTER NUMBERS OF ELEMENTS YOU WANT TO ENTER IN FIRST SET \n";
 	cin>>num1;
+	
+	
 	cout<<" ENTER NUMBERS OF ELEMENTS YOU WANT TO ENTER IN SECOND SET\n";
 	cin>>num2;
 	
@@ -236,7 +240,7 @@ int main()
 						set1.cardinality();
 						cout<<"\n CARDINALITY OF SET 2 :";
 						set2.cardinality();	
-						
+							
 				break;
 			}
 		case 2: {
